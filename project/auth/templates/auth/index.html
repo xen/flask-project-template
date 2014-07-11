@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set page_title = _('Login') %}
+
+{% block content %}
+<h1>{{ _("Social login") }}</h1>
+<p>{{ _("Login using your favorite social service ")}}</p>
+{% from 'auth/macros.html' import login_button with context %}
+<div class="well">
+{{ login_button(provider='google-oauth2') }}
+{{ login_button(provider='twitter') }}
+{{ login_button(provider='facebook') }}
+{{ login_button(provider='yahoo-oauth') }}
+{{ login_button(provider='github') }}
+</div>
+
+{% endblock %}
+

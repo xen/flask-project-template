@@ -1,0 +1,16 @@
+build-essential 
+python 
+python-software-properties 
+python-pip 
+python-setuptools 
+python-dev 
+python-virtualenv 
+python-pip 
+python-psycopg2
+postgresql
+curl 
+git 
+git-core
+nodejs
+openssl 
+libssl-dev

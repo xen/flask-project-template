@@ -1,0 +1,28 @@
+<!-- Static navbar -->
+<div class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand {% if url_for('frontend.index') == request.path %}active{% endif %}" href="{{ url_for('frontend.index') }}">{{ _("Site") }}</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li {% if url_for('frontend.splash') == request.path %}class="active"{% endif %}><a href="{{ url_for('frontend.splash') }}">{{ _("Splash page") }}</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li {% if url_for('frontend.page') == request.path %}class="active"{% endif %}><a href="{{ url_for('frontend.page') }}"><i class="fa fa-book"></i> {{ _("About site ") }}</a></li>
+
+      {% if user.is_authenticated() %}
+      <li><a href="{{ url_for('auth.settings') }}">{{ _("Settings")}}</a></li>
+      <li><a href="{{ url_for('auth.logout') }}" data-confirm="{{ _('Do you want to logout?')}}" data-title="{{ _('Logout?') }}"><i class="fa fa-sign-out"></i> {{ _("Logout") }}</a></li>
+      {% else %}
+      <li><a href="{{ url_for('auth.login') }}"> {{ _("Login") }} </a></li>
+      {% endif %}
+
+    </ul>
+  </div><!--/.nav-collapse -->
+</div>

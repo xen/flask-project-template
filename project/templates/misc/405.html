@@ -1,0 +1,7 @@
+{% extends "misc/base.html" %}
+{% set page_title = _('Method not allowed') %}
+{% block content %}
+<h1>{{ _("Error 405") }}</h1>
+<p class="lead">{{_("You are trying to access page by methods that is not allowed.")}}</p>
+<p><a href="/">{{ _("&larr; Back to front page") }}</a></p>
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+  "name": "vmstatic",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "*",
+    "jquery": "*",
+    "font-awesome": "*"
+  },
+  "devDependencies": {}
+}

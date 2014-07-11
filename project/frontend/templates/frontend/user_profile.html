@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% set page_title = user_profile.name %}
+
+{% block include_css %}
+{# <link rel="stylesheet" href="/static/libs/" type="text/css" media="screen"/> #}
+{% endblock %}
+
+{% block include_js %}
+{# <script src="/static/libs/"></script> #}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ user_profile.name }}</h1>
+{% endblock %}

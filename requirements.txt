@@ -1,0 +1,39 @@
+# base 
+Babel
+Flask
+Flask-Babel
+Flask-FlatPages
+Flask-Mail
+Flask-Script
+Flask-WTF
+Jinja2
+Markdown
+PyYAML
+Werkzeug
+itsdangerous
+pytz==2014.4
+requests
+speaklater
+
+# SQLAlchemy
+flask-restless
+Flask-SQLAlchemy
+flask-migrate
+
+# auth
+python_social_auth
+Flask-Login
+
+# trie
+# marisa_trie
+
+# Docs
+# sphinx
+# sphinx_rtd_theme
+
+# Testing
+# pytest
+# factory_boy == 2.3.1
+# newrelic
+# raven[flask]
+# selenium

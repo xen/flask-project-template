@@ -1,0 +1,25 @@
+{%  macro login_button(provider='') -%}
+{% if provider == 'google-oauth2' %}
+<a href='{{ url_for("social.auth", backend="google-oauth2") }}{% if next %}?next={{next}}{% endif %}' class="btn btn-default btn-lg"><i class="fa fa-google-plus-square" style="color: #DC4A38"></i> Google</a>
+{% elif provider == 'github' %}
+<a href='{{ url_for("social.auth", backend="github") }}{% if next %}?next={{next}}{% endif %}' class="btn btn-default btn-lg"><i class="fa fa-github"></i> Github</a>
+{% else %}
+<a href="{{ url_for("social.auth", backend=provider) }}{% if next %}?next={{next}}{% endif %}" class="btn btn-default btn-lg">{{ provider }}</a>
+{% endif %}
+{% endmacro -%}
+
+
+{%  macro logout_button(provider='', id=None) -%}
+<form action="{{ url_for("social.disconnect", backend=provider, association_id=id) }}" method="POST" class="nobox">
+<button type="submit" class="btn btn-link btn-lg" data-confirm="{{ _('Do you want to disconnect this service from your profile?')}}" data-title="{{ _('Are you sure?') }}">
+{% if provider == 'google-oauth2' %}
+<i class="fa fa-google-plus-square" style="color: #DC4A38"></i> Google
+{% elif provider == 'github' %}
+<i class="fa fa-github"></i> Github
+{% else %}
+{{ provider }}
+{% endif %}</button>
+</form>
+
+{% endmacro -%}
+

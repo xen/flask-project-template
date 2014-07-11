@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set page_title = _('Your profile') %}
+
+{% block content %}
+{% from 'auth/macros.html' import subnav with context%}
+{{ subnav('profile') }}
+
+<h2>{{ _("Social profiles") }}</h2>
+
+<p>{{ _("You are logged in as %(user)s!", user = user.username) }}!</p>
+
+<h4>{{ _("Associate to this profile: ") }}</h4>
+
+{% from 'auth/macros.html' import login_button with context%}
+<p>{{ _("For your convenience, add new social services to your account")}}</p>
+<div class="well">
+{% for name in backends.not_associated %}
+{{ login_button(provider=name) }}
+{% else %}
+<p>{{ _("Wee! You connected all available social services!") }}</p>
+{% endfor %}
+</div>
+
+<h4>{{ _("Associated: ") }}</h4>
+<p>{{ _("If you want to disconnect any service from the list then click item from the list") }}</p>
+{% from 'auth/macros.html' import logout_button with context%}
+<div class="well">
+{% for assoc in backends.associated %}
+{{ logout_button(provider=assoc.provider, id=assoc.id) }}
+{% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "misc/base.html" %}
+{% set page_title = _('Page not found') %}
+{% block content %}
+<h1>{{ _("Error 404") }}</h1>
+<p class="lead">{{ _("The page <code>%(url)s</code> you are looking for is not found.", url=request.url) }}</p>
+<p><a href="/">{{ _("&larr; Back to front page") }}</a></p>
+{% endblock %}
