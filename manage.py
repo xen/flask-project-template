@@ -35,8 +35,10 @@ def syncdb():
     db.create_all()
 
 
-@manager.option('-s', '--source', dest='source', default='data/serialized_dump.txt', required=False, help='Source file')
-def initdata(source='data/serialized_dump.txt'):
+@manager.option('-s', '--source', dest='source', 
+                default='data/serialized_dump.txt', 
+                required=False, help='Restore fixture from dump')
+def restore(source='data/serialized_dump.txt'):
     print("Start importing data")
     with open(source, 'rb') as f:
         data = json.loads(f.readline())
@@ -53,18 +55,12 @@ def initdata(source='data/serialized_dump.txt'):
 
         db.session.commit()
 
-    seq_tables = []  # #List tables that need to have their sequences dropped here (postgresql only)
-    for table_name in seq_tables:
-        try:
-            db.engine.execute("SELECT setval('{}_id_seq', (SELECT MAX(id) FROM {})+1);".format(table_name, table_name))
-        except OperationalError:
-            print('sequence bump for {} failed: not using PostgreSQL?'.format(table_name))
     print('Done')
 
 
 @manager.option('-d', '--destination', dest='destination', default=None, required=True, help='Output file')
-def dump_db(destination):
-    dump_models = []  # #List your models here
+def dump(destination):
+    dump_models = []  # List of models you want to dump
     serialized = list()
     for model in dump_models:
         print('Dumping {}'.format(model))
@@ -72,7 +68,6 @@ def dump_db(destination):
     with open(destination, 'w') as f:
         f.writelines(json.dumps(serialized))
     print 'Done.'
-
 
 
 manager.add_option('-c', '--config', dest="config", required=False,
