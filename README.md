@@ -31,15 +31,6 @@ You can simple run project inside of Docker container or on your prefered enviro
 - Recent python supported version with sqlite library (usually it is included) 
 - Working `virtualenv-2.7` command, name can vary, so you can change it inside `Makefile`
 - `make`
-<<<<<<< HEAD
-- [`bower`](http://bower.io/), if you already have `node.js` with `npm` then it can be installed:
-```sh
-npm install -g bower
-```
-=======
 - [`bower`](http://bower.io/), if you already have `node.js` with `npm` then run this command:
 ```sh
 npm install -g bower
-```
-
->>>>>>> FETCH_HEAD
