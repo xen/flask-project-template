@@ -4,7 +4,7 @@ venv/bin/activate:
 	virtualenv-2.7 venv
 
 run: venv/bin/activate requirements.txt
-	. venv/bin/activate; python manage.py runserver
+	. venv/bin/activate; python manage.py runserver -h 0.0.0.0 -d -r
 
 setup: venv/bin/activate requirements.txt
 	. venv/bin/activate; pip install -Ur requirements.txt
