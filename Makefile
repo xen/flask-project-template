@@ -6,14 +6,9 @@ venv/bin/activate:
 run: venv/bin/activate requirements.txt
 	. venv/bin/activate; python manage.py runserver
 
-static/bower.json:
-	cd static && bower install
-
-setup: venv/bin/activate requirements.txt static/bower.json
+setup: venv/bin/activate requirements.txt
 	. venv/bin/activate; pip install -Ur requirements.txt
-
-init: venv/bin/activate requirements.txt
-	. venv/bin/activate; python manage.py init
+	cd static && bower install
 
 babel: venv/bin/activate
 	. venv/bin/activate; pybabel extract -F babel.cfg -o project/translations/messages.pot project

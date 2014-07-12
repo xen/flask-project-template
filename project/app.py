@@ -33,7 +33,7 @@ def create_app(config=None, app_name='project', blueprints=None):
         template_folder="templates"
     )
 
-    app.config.from_object('vm.config')
+    app.config.from_object('project.config')
     app.config.from_pyfile('../local.cfg', silent=True)
     if config:
         app.config.from_pyfile(config)

@@ -11,7 +11,7 @@
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li {% if url_for('frontend.splash') == request.path %}class="active"{% endif %}><a href="{{ url_for('frontend.splash') }}">{{ _("Splash page") }}</a></li>
+      <li {% if url_for('frontend.index') == request.path %}class="active"{% endif %}><a href="{{ url_for('frontend.index') }}">{{ _("Splash page") }}</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li {% if url_for('frontend.page') == request.path %}class="active"{% endif %}><a href="{{ url_for('frontend.page') }}"><i class="fa fa-book"></i> {{ _("About site ") }}</a></li>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 DEBUG = True
-SECRET_KEY = ''
+SECRET_KEY = 'change me please'
 
 from os.path import dirname, abspath, join
 SQLALCHEMY_DATABASE_URI = 'sqlite:////%s/data.sqlite' % dirname(abspath(__file__))

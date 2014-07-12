@@ -21,7 +21,7 @@ def before_request():
 
 @frontend.route('/')
 def index():
-    return render_template('frontend/splash.html')
+    return render_template('frontend/index.html')
 
 
 @frontend.route('/docs/', defaults={'path': 'index'})
