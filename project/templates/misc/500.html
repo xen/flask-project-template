@@ -2,6 +2,6 @@
 {% set page_title = _('Server error') %}
 {% block content %}
 <h1>{{ _("Error 500") }}</h1>
-<p class="lead">{{ _("Error generating page <code>%(url)s</code>. Please <a href='%(contact)s'>contact us</a>.", url=request.url, contact=url_for('splash.conacts')) }}</p>
-<p><a href="{{ url_for('splash.index') }}">{{ _("&larr; Back to front page" ) }}</a></p>
+<p class="lead">{{ _("Error generating page <code>%(url)s</code>. Please <a href='/contact'>contact us</a>.", url=request.url) }}</p>
+<p><a href="/">{{ _("&larr; Back to front page" ) }}</a></p>
 {% endblock %}
