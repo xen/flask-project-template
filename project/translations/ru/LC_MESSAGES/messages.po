@@ -3,168 +3,171 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-07-12 04:01+0300\n"
-"PO-Revision-Date: 2014-07-12 04:01+0300\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-07-12 04:19+0300\n"
+"PO-Revision-Date: 2014-07-12 04:21+0200\n"
+"Last-Translator: Mikhail Kashkin <mkashkin@gmail.com>\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #: project/auth/views.py:51
 msgid "Settings saved"
-msgstr ""
+msgstr "Настройки сохранены"
 
 #: project/auth/templates/auth/index.html:2 project/templates/nav.html:23
 msgid "Login"
-msgstr ""
+msgstr "Войти"
 
 #: project/auth/templates/auth/index.html:5
 msgid "Social login"
-msgstr ""
+msgstr "Вход через социальные сети"
 
 #: project/auth/templates/auth/index.html:6
 msgid "Login using your favorite social service "
-msgstr ""
+msgstr "Войдите через социальную сеть"
 
 #: project/auth/templates/auth/macros.html:14
 msgid "Do you want to disconnect this service from your profile?"
-msgstr ""
+msgstr "Вы хотите отключить эту социальную сеть?"
 
 #: project/auth/templates/auth/macros.html:14
 msgid "Are you sure?"
-msgstr ""
+msgstr "Вы уверены?"
 
 #: project/auth/templates/auth/profile.html:2
 msgid "Your profile"
-msgstr ""
+msgstr "Ваш профайл"
 
 #: project/auth/templates/auth/profile.html:8
 msgid "Social profiles"
-msgstr ""
+msgstr "Профайлы в социальных сетях"
 
 #: project/auth/templates/auth/profile.html:10
 #, python-format
 msgid "You are logged in as %(user)s!"
-msgstr ""
+msgstr "Вы вошли как %(user)s!"
 
 #: project/auth/templates/auth/profile.html:12
 msgid "Associate to this profile: "
-msgstr ""
+msgstr "Связать со своей учетной записью"
 
 #: project/auth/templates/auth/profile.html:15
 msgid "For your convenience, add new social services to your account"
-msgstr ""
+msgstr "Привяжите другие социальные сети для вашего удобства"
 
 #: project/auth/templates/auth/profile.html:20
 msgid "Wee! You connected all available social services!"
-msgstr ""
+msgstr "Ура! Вы привязали все доступные социальные сети!"
 
 #: project/auth/templates/auth/profile.html:24
 msgid "Associated: "
-msgstr ""
+msgstr "Уже добавлены:"
 
 #: project/auth/templates/auth/profile.html:25
 msgid ""
-"If you want to disconnect any service from the list then click item from "
-"the list"
+"If you want to disconnect any service from the list then click item from the "
+"list"
 msgstr ""
+"Если вы хотите отключить социальную сеть, то кликните на элемент списка."
 
 #: project/auth/templates/auth/settings.html:2 project/templates/nav.html:20
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: project/auth/templates/auth/settings.html:5
 msgid "Personal settings"
-msgstr ""
+msgstr "Персональные настройки"
 
 #: project/auth/templates/auth/settings.html:18
 msgid "Update settings"
-msgstr ""
+msgstr "Сохранить настройки"
 
 #: project/frontend/templates/frontend/index.html:2
 #: project/frontend/templates/frontend/index.html:5
 msgid "Welcome to our new site"
-msgstr ""
+msgstr "Добро пожаловать на наш новый сайт"
 
 #: project/templates/base.html:11 project/templates/base.html:59
 msgid "New site"
-msgstr ""
+msgstr "Новый сайт"
 
 #: project/templates/nav.html:10
 msgid "Site"
-msgstr ""
+msgstr "Сайт"
 
 #: project/templates/nav.html:14
 msgid "Splash page"
-msgstr ""
+msgstr "Главная страница"
 
 #: project/templates/nav.html:17
 msgid "About site "
-msgstr ""
+msgstr "О сайте"
 
 #: project/templates/nav.html:21
 msgid "Do you want to logout?"
-msgstr ""
+msgstr "Вы хотите выйти?"
 
 #: project/templates/nav.html:21
 msgid "Logout?"
-msgstr ""
+msgstr "Выйти?"
 
 #: project/templates/nav.html:21
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 #: project/templates/misc/404.html:2
 msgid "Page not found"
-msgstr ""
+msgstr "Страница не найдена"
 
 #: project/templates/misc/404.html:4
 msgid "Error 404"
-msgstr ""
+msgstr "Ошибка 404"
 
 #: project/templates/misc/404.html:5
 #, python-format
 msgid "The page <code>%(url)s</code> you are looking for is not found."
-msgstr ""
+msgstr "Страница <code>%(url)s</code> на сайте не найдена."
 
 #: project/templates/misc/404.html:6 project/templates/misc/405.html:6
 #: project/templates/misc/500.html:6
 msgid "&larr; Back to front page"
-msgstr ""
+msgstr "&larr; Вернуться на главную страницу"
 
 #: project/templates/misc/405.html:2
 msgid "Method not allowed"
-msgstr ""
+msgstr "Метод доступа запрещен"
 
 #: project/templates/misc/405.html:4
 msgid "Error 405"
-msgstr ""
+msgstr "Ошибка 405"
 
 #: project/templates/misc/405.html:5
 msgid "You are trying to access page by methods that is not allowed."
-msgstr ""
+msgstr "Вы пытаетесь обратиться к странице неправильным методом."
 
 #: project/templates/misc/500.html:2
 msgid "Server error"
-msgstr ""
+msgstr "Ошибка сервера"
 
 #: project/templates/misc/500.html:4
 msgid "Error 500"
-msgstr ""
+msgstr "Ошибка 500"
 
 #: project/templates/misc/500.html:5
 #, python-format
 msgid ""
-"Error generating page <code>%(url)s</code>. Please <a "
-"href='%(contact)s'>contact us</a>."
+"Error generating page <code>%(url)s</code>. Please <a href='/"
+"contact'>contact us</a>."
 msgstr ""
-
+"Ошибка обращения к странице <code>%(url)s</code>. Пожалуйста свяжитесь <a "
+"href='/contact'>с нами</a>."
