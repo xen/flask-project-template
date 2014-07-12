@@ -20,7 +20,8 @@ babel: venv/bin/activate
 lazybabel: venv/bin/activate
 	. venv/bin/activate; pybabel extract -F babel.cfg -k lazy_gettext -o project/translations/messages.pot project
 
-# run $LANG=ru
+# run: 
+# $ LANG=en make addlang
 addlang: venv/bin/activate
 	. venv/bin/activate; pybabel init -i project/translations/messages.pot -d project/translations -l $(LANG)
 
