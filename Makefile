@@ -10,6 +10,9 @@ setup: venv/bin/activate requirements.txt
 	. venv/bin/activate; pip install -Ur requirements.txt
 	cd static && bower install
 
+init: venv/bin/activate requirements.txt
+	. venv/bin/activate; python manage.py db upgrade 
+
 babel: venv/bin/activate
 	. venv/bin/activate; pybabel extract -F babel.cfg -o project/translations/messages.pot project
 
