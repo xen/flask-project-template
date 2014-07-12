@@ -35,6 +35,7 @@ You can simple run project inside of Docker container or on your prefered enviro
 - [`bower`](http://bower.io/), if you already have `node.js` with `npm` then run this command:
 ```sh
 npm install -g bower
+```
 
 ## Included modules support
 
@@ -49,7 +50,7 @@ npm install -g bower
 - [`python_social_auth`](https://github.com/omab/python-social-auth) & [`Flask-Login`](https://flask-login.readthedocs.org/) — social networks login
 
 
-## `make` command overview
+## `make` commands overview
 
 There is several usefull targets in `Makefile`:
 
