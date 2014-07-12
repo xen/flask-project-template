@@ -6,7 +6,7 @@
 - SQLAlchemy with out-of-the-box migrations (uses Alembic)
 - Simple setup `make setup & make run` which make local virtualenv isolated environment and doesn't trash your system python.
 - Contains `Dockerfile` that allow to setup full linux environment on any host OS supported by Docker
-- Static managed by `bower`. By default templates uses `Bootstrap` but doesn't force you to use this UI framework.
+- Static files managed by `bower`. By default templates uses `Bootstrap` but doesn't force you to use this UI framework.
 - Have working example of GitHub OAuth authorization, you only need to provide your own security and secret key (will work with example keys only on `localhost:5000`). Allow user login/logout 
 - Integrated Babel support and special support targets for `make`
 - User settings page with ability to switch site language
@@ -31,3 +31,7 @@ You can simple run project inside of Docker container or on your prefered enviro
 - Recent python supported version with sqlite library (usually it is included) 
 - Working `virtualenv-2.7` command, name can vary, so you can change it inside `Makefile`
 - `make`
+- [`bower`](http://bower.io/), if you already have `node.js` with `npm` then it can be installed:
+```sh
+npm install -g bower
+```
