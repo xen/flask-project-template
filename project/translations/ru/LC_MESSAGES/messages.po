@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-07-12 04:19+0300\n"
-"PO-Revision-Date: 2014-07-12 04:21+0200\n"
+"POT-Creation-Date: 2014-07-12 04:22+0300\n"
+"PO-Revision-Date: 2014-07-12 04:26+0200\n"
 "Last-Translator: Mikhail Kashkin <mkashkin@gmail.com>\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -19,6 +19,56 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 "Language: ru\n"
 "X-Generator: Poedit 1.6.6\n"
+
+#: project/auth/forms.py:14
+msgid "Primary site language"
+msgstr "Язык сайта"
+
+#: project/auth/forms.py:15
+msgid ""
+"Site will try to show UI labels using this language. User data will be shown "
+"in original languages."
+msgstr ""
+"Служебные тексты сайта будут переведены, пользовательский контент не "
+"изменится"
+
+#: project/auth/forms.py:19
+msgid "Personal site URL"
+msgstr "Персональный сайт"
+
+#: project/auth/forms.py:20
+msgid ""
+"If you have personal site and want to share with other people, please fill "
+"this field"
+msgstr "Если у вас есть персональный сайт, то укажите ссылку на него."
+
+#: project/auth/forms.py:22
+msgid "Invalid URL."
+msgstr "Ошибка в адресе сайта"
+
+#: project/auth/forms.py:24
+msgid "Public profile address"
+msgstr "Адрес профайла"
+
+#: project/auth/forms.py:25
+msgid ""
+"Will be part of your public profile URL. Can be from 2 up to 40 characters "
+"length, can start start from [a-z] and contains only latin [0-9a-zA-Z] chars."
+msgstr ""
+"Будет частью вашего публичного профайла на сайте. Может быть от 2 до 40 "
+"символов, начинаться на [a-z] и содержать только латинские символы в "
+"диапазоне [0-9a-zA-Z]."
+
+#: project/auth/forms.py:29
+msgid "Field must be between 2 and 40 characters long."
+msgstr "Длинна должна быть от 2 до 40 символов"
+
+#: project/auth/forms.py:33
+msgid ""
+"Username should start from [a-z] and contains only latin [0-9a-zA-Z] chars"
+msgstr ""
+"Имя профайла может начинаться только с символов [a-z] и содержать только "
+"латинские символы из диапазона [0-9a-zA-Z]."
 
 #: project/auth/views.py:51
 msgid "Settings saved"

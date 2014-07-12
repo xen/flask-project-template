@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-07-12 04:19+0300\n"
+"POT-Creation-Date: 2014-07-12 04:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+
+#: project/auth/forms.py:14
+msgid "Primary site language"
+msgstr ""
+
+#: project/auth/forms.py:15
+msgid ""
+"Site will try to show UI labels using this language. User data will be "
+"shown in original languages."
+msgstr ""
+
+#: project/auth/forms.py:19
+msgid "Personal site URL"
+msgstr ""
+
+#: project/auth/forms.py:20
+msgid ""
+"If you have personal site and want to share with other people, please "
+"fill this field"
+msgstr ""
+
+#: project/auth/forms.py:22
+msgid "Invalid URL."
+msgstr ""
+
+#: project/auth/forms.py:24
+msgid "Public profile address"
+msgstr ""
+
+#: project/auth/forms.py:25
+msgid ""
+"Will be part of your public profile URL. Can be from 2 up to 40 "
+"characters length, can start start from [a-z] and contains only latin [0"
+"-9a-zA-Z] chars."
+msgstr ""
+
+#: project/auth/forms.py:29
+msgid "Field must be between 2 and 40 characters long."
+msgstr ""
+
+#: project/auth/forms.py:33
+msgid "Username should start from [a-z] and contains only latin [0-9a-zA-Z] chars"
+msgstr ""
 
 #: project/auth/views.py:51
 msgid "Settings saved"
