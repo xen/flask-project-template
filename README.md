@@ -11,6 +11,7 @@
 - Integrated Babel support and special support targets for `make`
 - User settings page with ability to switch site language
 - `Flask-FlatPages` support to simplify static pages management
+- Builtin `Flask-Script` support with shell
 
 ## How to start
 
@@ -23,3 +24,10 @@ Follow this steps:
 - `make run`, you have working site
 - Open browser http://127.0.0.1:5000/
 - Customize project files and have fun
+
+## Requirements
+
+You can simple run project inside of Docker container or on your prefered environment. If you want to run on your own environment you need:
+- Recent python supported version with sqlite library (usually it is included) 
+- Working `virtualenv-2.7` command, name can vary, so you can change it inside `Makefile`
+- `make`
