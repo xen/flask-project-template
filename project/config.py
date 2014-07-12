@@ -43,6 +43,6 @@ SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
 
 # Documnetation http://psa.matiasaguirre.net/docs/backends/index.html
 # https://github.com/settings/applications/
-SOCIAL_AUTH_GITHUB_KEY = ''
-SOCIAL_AUTH_GITHUB_SECRET = ''
+SOCIAL_AUTH_GITHUB_KEY = '8b643b3f60a3dd4470e7'
+SOCIAL_AUTH_GITHUB_SECRET = '3e07a41b69244ec209db690e1babab3ca1d33291'
 SOCIAL_AUTH_GITHUB_SCOPE = ['user:email']
