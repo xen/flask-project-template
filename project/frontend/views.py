@@ -6,17 +6,8 @@ from flask import (Blueprint, render_template, g, request, url_for,
 from flask.ext.login import login_required
 
 from ..extensions import pages, csrf
-from ..models import User
 
 frontend = Blueprint('frontend', __name__, template_folder="templates")
-
-
-@frontend.before_request
-def before_request():
-    # Add to global vars list of the projects owned by current user
-    if g.user:
-        pass
-        # g.my_countries = Project.query.filter_by(login=g.user.login).all()
 
 
 @frontend.route('/')
@@ -41,12 +32,4 @@ def static_from_root():
 @frontend.route('/favicon.ico')
 def favicon():
     return redirect('/static/favicon.png')
-
-
-@frontend.route('/user/<string:username>')
-def user_profile(username):
-    user_profile = User.query.filter_by(username=username).first_or_404()
-    return render_template('frontend/user_profile.html',
-        user_profile=user_profile)
-
 
