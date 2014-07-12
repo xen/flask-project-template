@@ -2,16 +2,15 @@ import re
 from flask.ext.wtf import Form
 from flask.ext.babel import lazy_gettext
 
-from wtforms.fields import TextField
+from wtforms.fields import TextField, SelectField
 from wtforms.fields.html5 import URLField
 from wtforms.validators import url, length, regexp, optional
-from ..widgets import Select2Field, Select2MultipleField
 
 
 class SettingsForm(Form):
     """docstring for SettingsForm"""
 
-    ui_lang = Select2Field(
+    ui_lang = SelectField(
         label=lazy_gettext("Primary site language"),
         description=lazy_gettext("Site will try to show UI labels using this " +
             "language. User data will be shown in original languages."),
