@@ -13,12 +13,10 @@ from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.serializer import dumps, loads
 
 manager = Manager(create_app)
+
 # Add Flask-Migrate commands under `db` prefix, for example:
 # $ python manage.py db init
-#
 # $ python manage.py db migrate
-#
-
 manager.add_command('db', MigrateCommand)
 
 
@@ -35,8 +33,8 @@ def syncdb():
     db.create_all()
 
 
-@manager.option('-s', '--source', dest='source', 
-                default='data/serialized_dump.txt', 
+@manager.option('-s', '--source', dest='source',
+                default='data/serialized_dump.txt',
                 required=False, help='Restore fixture from dump')
 def restore(source='data/serialized_dump.txt'):
     print("Start importing data")
@@ -45,7 +43,7 @@ def restore(source='data/serialized_dump.txt'):
     for model_data in data:
         try:
             restored = loads(model_data, db.metadata, db.session)
-        except AttributeError, e:
+        except AttributeError as e:
             print('Table does not exist: {}'.format(e))
             continue
         if restored:
@@ -67,7 +65,7 @@ def dump(destination):
         serialized.append(unicode(dumps(db.session.query(model).all()), errors='ignore'))
     with open(destination, 'w') as f:
         f.writelines(json.dumps(serialized))
-    print 'Done.'
+    print('Done.')
 
 
 manager.add_option('-c', '--config', dest="config", required=False,

@@ -68,7 +68,6 @@ def extensions_fabrics(app):
     login_manager.init_app(app)
     manager.init_app(app, db)
     migrate.init_app(app, db)
-
     csrf.init_app(app)
 
 

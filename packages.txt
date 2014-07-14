@@ -6,8 +6,6 @@ python-setuptools
 python-dev 
 python-virtualenv 
 python-pip 
-python-psycopg2
-postgresql
 curl 
 git 
 git-core
