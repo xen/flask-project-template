@@ -1,7 +1,7 @@
 all: setup
 
 venv/bin/activate:
-	virtualenv-2.7 venv
+	if which virtualenv-2.7 >/dev/null; then virtualenv-2.7 venv; else virtualenv venv; fi
 
 run: venv/bin/activate requirements.txt
 	. venv/bin/activate; python manage.py runserver -h 0.0.0.0 -d -r

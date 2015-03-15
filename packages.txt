@@ -12,3 +12,5 @@ git-core
 nodejs
 openssl 
 libssl-dev
+redis
+memcached

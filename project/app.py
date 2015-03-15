@@ -14,11 +14,11 @@ from .frontend import frontend
 from .auth import auth
 from .api import api, initialize_api
 
-from social.apps.flask_app.default.routes import social_auth
-from social.apps.flask_app.models import init_social
+from social.apps.flask_app.routes import social_auth
+from social.apps.flask_app.default.models import init_social
 from social.apps.flask_app.template_filters import backends
 
-__all__ = ['create_app']
+__all__ = ('create_app', 'create_celery', )
 
 BLUEPRINTS = (
     frontend,

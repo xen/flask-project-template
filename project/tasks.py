@@ -1,9 +1,6 @@
 import datetime
-import requests
-from flask.globals import current_app
+from flask import current_app
 from celery.signals import task_postrun
-
-from .models import User, Follow
 
 from .extensions import celery, db
 
