@@ -27,3 +27,10 @@ addlang: venv/bin/activate
 
 updlang: venv/bin/activate
 	. venv/bin/activate; pybabel update -i project/translations/messages.pot -d project/translations
+
+celery:
+	. venv/bin/activate; python celery_run.py worker
+
+# celery in debug state
+dcelery:
+	. venv/bin/activate; python celery_run.py worker -l info --autoreload

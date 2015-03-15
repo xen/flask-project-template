@@ -6,12 +6,15 @@ from flask import (Blueprint, render_template, g, request, url_for,
 from flask.ext.login import login_required
 
 from ..extensions import pages, csrf
+from ..tasks import do_some_stuff
 
 frontend = Blueprint('frontend', __name__, template_folder="templates")
 
 
 @frontend.route('/')
 def index():
+    # Run background task inside of view
+    do_some_stuff.delay()
     return render_template('frontend/index.html')
 
 

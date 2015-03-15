@@ -15,6 +15,12 @@ pytz==2014.4
 requests
 speaklater
 
+# Cache and Celery
+Flask-Cache
+pylibmc
+redis
+celery
+
 # SQLAlchemy
 flask-restless
 Flask-SQLAlchemy
@@ -23,17 +29,3 @@ flask-migrate
 # auth
 python_social_auth
 Flask-Login
-
-# trie
-# marisa_trie
-
-# Docs
-# sphinx
-# sphinx_rtd_theme
-
-# Testing
-# pytest
-# factory_boy == 2.3.1
-# newrelic
-# raven[flask]
-# selenium

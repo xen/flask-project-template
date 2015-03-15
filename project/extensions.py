@@ -24,3 +24,9 @@ migrate = Migrate()
 
 from flask.ext.wtf.csrf import CsrfProtect
 csrf = CsrfProtect()
+
+from flask.ext.cache import Cache
+cache = Cache()
+
+from celery import Celery
+celery = Celery()

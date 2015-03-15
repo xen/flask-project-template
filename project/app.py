@@ -4,16 +4,17 @@
 import os
 from flask import Flask, request, render_template, g
 from flask.ext import login
+from celery import Celery
 
 from .extensions import (db, mail, pages, manager, login_manager, babel,
-    migrate, csrf)
+    migrate, csrf, cache, celery)
 
 # blueprints
 from .frontend import frontend
 from .auth import auth
 from .api import api, initialize_api
 
-from social.apps.flask_app.routes import social_auth
+from social.apps.flask_app.default.routes import social_auth
 from social.apps.flask_app.models import init_social
 from social.apps.flask_app.template_filters import backends
 
@@ -52,6 +53,18 @@ def create_app(config=None, app_name='project', blueprints=None):
     return app
 
 
+def create_celery(app):
+    celery = Celery(app.import_name, broker=app.config['CELERY_BROKER_URL'])
+    celery.conf.update(app.config)
+    TaskBase = celery.Task
+    class ContextTask(TaskBase):
+        abstract = True
+        def __call__(self, *args, **kwargs):
+            with app.app_context():
+                return TaskBase.__call__(self, *args, **kwargs)
+    celery.Task = ContextTask
+    return celery
+
 def blueprints_fabrics(app, blueprints):
     """Configure blueprints in views."""
 
@@ -69,6 +82,8 @@ def extensions_fabrics(app):
     manager.init_app(app, db)
     migrate.init_app(app, db)
     csrf.init_app(app)
+    cache.init_app(app)
+    celery.config_from_object(app.config)
 
 
 def api_fabrics():

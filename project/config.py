@@ -31,6 +31,20 @@ MAIL_USE_SSL = False
 MAIL_USERNAME = 'your@email.address'
 #MAIL_PASSWORD = 'topsecret'
 
+# Celery
+BROKER_TRANSPORT = 'redis'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_DISABLE_RATE_LIMITS = True
+CELERY_ACCEPT_CONTENT = ['json',]
+
+# cache
+CACHE_TYPE = 'memcached'
+CACHE_MEMCACHED_SERVERS = ['127.0.0.1:11211', ]
+# CACHE_MEMCACHED_USERNAME =
+# CACHE_MEMCACHED_PASSWORD =
+
 # Auth
 SESSION_COOKIE_NAME = 'session'
 
