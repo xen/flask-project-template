@@ -7,7 +7,7 @@
 - Simple setup `make setup && make run` which make local virtualenv isolated environment and doesn't trash your system python.
 - Contains `Dockerfile` that allow to setup full linux environment on any host OS supported by Docker
 - Static files managed by `bower`. By default templates uses `Bootstrap` but doesn't force you to use this UI framework.
-- Have working example of GitHub **OAuth authorization**, you only need to provide your own security and secret key (will work with example keys only on `localhost:5000`). Allow user login/logout 
+- Have working example of GitHub **OAuth authorization**, you only need to provide your own security and secret key (will work with example keys only on `127.0.0.1:5000`). Allow user login/logout 
 - **i18n** and **l10n** via integrated Babel support and `make` targets 
 - User settings page with ability to switch site language
 - `Flask-FlatPages` support to simplify static pages management
@@ -19,7 +19,11 @@
 
 ## How to start
 
-Project is ready to run (with some requrements). You need to clone and run:
+There is two ways. First way is use [`cookiecutter`](https://github.com/audreyr/cookiecutter) template (it located in [different repository](https://github.com/xen/flask-ptc)):
+
+    cookiecutter https://github.com/xen/flask-ptc.git
+
+Second way is manually clone this repository and change it later by own. Project is ready to run (with some requrements). You need to clone and run:
 
     $ mkdir Project
     $ cd Project
@@ -278,5 +282,7 @@ Notice that `cfg` files don't executed it is simple text files. In the end confi
 This approach cover most cases I have in my practice. Show your DevOp how to use `cfg` and put inside variables he/she need to change. 
 
 Also `local.cfg` is ignored in `.gitignore` so you will not accidentally put your database passwords to public repository.
+
+## `app.py` — cornerstone part of your application
 
 
