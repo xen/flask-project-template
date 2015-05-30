@@ -26,5 +26,5 @@ Flask-SQLAlchemy
 flask-migrate
 
 # auth
-python_social_auth
+python_social_auth==0.2.1
 Flask-Login
