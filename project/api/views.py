@@ -6,10 +6,13 @@ from ..extensions import manager
 # from ..models import MyModel
 
 
-def initialize_api():
-    # List all Flask-Restless APIs here
-    # model_api = manager.create_api(MyModel, methods=['GET'])
-    pass
+def initialize_api(app):
+    with app.app_context():
+        # List all Flask-Restless APIs here
+        # model_api = manager.create_api(MyModel, methods=['GET'],
+        #                                app=app,
+        #                                url_prefix='/api')
+        pass
 
 
-api = Blueprint('api', __name__, url_prefix='/api')
+api = Blueprint('api', __name__)

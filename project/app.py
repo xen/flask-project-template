@@ -44,7 +44,7 @@ def create_app(config=None, app_name='project', blueprints=None):
 
     blueprints_fabrics(app, blueprints)
     extensions_fabrics(app)
-    api_fabrics()  # this must be called after extensions_fabrics
+    api_fabrics(api)  # this must be called after extensions_fabrics
     configure_logging(app)
 
     error_pages(app)
@@ -79,15 +79,15 @@ def extensions_fabrics(app):
     pages.init_app(app)
     init_social(app, db)
     login_manager.init_app(app)
-    manager.init_app(app, db)
+    manager.init_app(app, flask_sqlalchemy_db=db)
     migrate.init_app(app, db)
     csrf.init_app(app)
     cache.init_app(app)
     celery.config_from_object(app.config)
 
 
-def api_fabrics():
-    initialize_api()
+def api_fabrics(app):
+    initialize_api(app)
 
 
 def error_pages(app):
