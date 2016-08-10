@@ -3,7 +3,7 @@
 
 import os
 from flask import Flask, request, render_template, g
-from flask.ext import login
+from flask_login import current_user
 from celery import Celery
 
 from .extensions import (db, mail, pages, manager, login_manager, babel,
@@ -87,7 +87,8 @@ def extensions_fabrics(app):
 
 
 def api_fabrics(app):
-    initialize_api(app)
+    # initialize_api(app)
+    pass
 
 
 def error_pages(app):
@@ -131,7 +132,7 @@ def gvars(app):
 
     @app.before_request
     def guser():
-        g.user = login.current_user
+        g.user = current_user
 
     @app.context_processor
     def inject_user():

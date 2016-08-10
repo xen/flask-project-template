@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from hashlib import md5
 from ..extensions import db
-from flask.ext.login import UserMixin
+from flask_login import UserMixin
 
 
 class User(db.Model, UserMixin):

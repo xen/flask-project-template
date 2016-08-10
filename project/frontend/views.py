@@ -3,7 +3,7 @@
 from flask import (Blueprint, render_template, g, request, url_for,
     current_app, send_from_directory, json, redirect, make_response, abort)
 
-from flask.ext.login import login_required
+from flask_login import login_required
 
 from ..extensions import pages, csrf
 from ..tasks import do_some_stuff
