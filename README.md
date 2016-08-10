@@ -25,11 +25,13 @@ There is two ways. First way is use [`cookiecutter`](https://github.com/audreyr/
 
 Second way is manually clone this repository and change it later by own. Project is ready to run (with some requrements). You need to clone and run:
 
-    $ mkdir Project
-    $ cd Project
-    $ git clone git@github.com:xen/flask-project-template.git .
-    $ make
-    $ make run
+```sh
+$ mkdir Project
+$ cd Project
+$ git clone git@github.com:xen/flask-project-template.git .
+$ make
+$ make run
+```
 
 Open http://127.0.0.1:5000/, customize project files and **have fun**.
 
@@ -44,9 +46,21 @@ If you familiar with web development then you need Python and Node.js:
 - Working `virtualenv` command, name can vary, so you can change it inside `Makefile`
 - `make`
 - [`bower`](http://bower.io/), if you already have `node.js` with `npm` then run this command:
+
 ```sh
 npm install -g bower
 ```
+
+## macOS
+
+How to make full Python setup on macOS is not topic that can be cowered quickly (because you will need XCode and few more steps). One of the prefered ways to install required packages is to use `brew`. Memcached and Redis are not nesessary for all sites, but I have included them into project since my projects usually depends on them. If you need them also then install [`brew`](http://brew.sh) and then run this command:
+
+```sh
+brew install python  # or python3 or pypy
+brew install memcached libmemcached redis
+```
+
+You also can use `brew` to install your prefered RDBMS, nginx or whatever you need for your development.
 
 **Can I use Python 3?**
 
@@ -92,10 +106,12 @@ Translation workflow in nutshell:
 
 `Flask-Script` added flawor of Django `manage.py` to Flask development. Put your common management tasks inside this file. Migration commands already available with `db` prefix. For example how to make new migration and upgrade your database:
 
-    $ python manage.py db migrate -m "new models"
-    $ python manage.py db upgrade
-    # don't forget to add new file under git control
-    $ git add migrations/versions/*.py
+```sh
+$ python manage.py db migrate -m "new models"
+$ python manage.py db upgrade
+# don't forget to add new file under git control
+$ git add migrations/versions/*.py
+```
 
 By default `manage.py` already have this commands:
 
