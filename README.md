@@ -7,7 +7,7 @@
 - Simple setup `make setup && make run` which make local virtualenv isolated environment and doesn't trash your system python.
 - Contains `Dockerfile` that allows to setup full Linux environment on any host OS supported by Docker
 - Static files managed by `bower`. By default, templates use `Bootstrap` but don't force you to use this UI framework.
-- Have a working example of GitHub **OAuth authorization**, you only need to provide your own security and secret key (will work with example keys only on `127.0.0.1:5000`). Allow user login/logout 
+- Have a working example of GitHub **OAuth authorization**, you only need to provide your security and secret key (will work with example keys only on `127.0.0.1:5000`). Allow user login/logout 
 - **i18n** and **l10n** via integrated Babel support and `make` targets 
 - User settings page with the ability to switch the site language
 - `Flask-FlatPages` support to simplify static pages management
@@ -237,7 +237,7 @@ Celery tasks placed here. If you have worked with Celery you will found yourself
     │   │   ├── nav.html
     │   │   └── page.html
 
-There are basic site templates. Each blueprint has it's own `template/<blueprint_name>` folder because of the recommendation of Jinja documentation. If you don't want to read how Jinja environment lookup working then just follow this pattern. For your convenience `misc` folder contains templates for common error pages.   
+There are basic site templates. Each blueprint has it's own `template/<blueprint_name>` folder because of the recommendation of Jinja documentation. If you don't want to read how the Jinja environment lookup working then just follow this pattern. For your convenience `misc` folder contains templates for common error pages.   
 
     │   ├── translations
     │   │   ├── en
@@ -300,5 +300,3 @@ This approach covers most cases I have in my practice. Show your DevOp how to us
 Also `local.cfg` is ignored in `.gitignore` so you will not accidentally put your database passwords to a public repository.
 
 ## `app.py` — cornerstone part of your application
-
-
