@@ -1,13 +1,23 @@
 # -*- coding: utf-8 -*-
-#pylint:disable-msg=W0612
+# pylint:disable-msg=W0612
 
 import os
 from flask import Flask, request, render_template, g
 from flask_login import current_user
 from celery import Celery
 
-from .extensions import (db, mail, pages, manager, login_manager, babel,
-    migrate, csrf, cache, celery)
+from .extensions import (
+    db,
+    mail,
+    pages,
+    manager,
+    login_manager,
+    babel,
+    migrate,
+    csrf,
+    cache,
+    celery,
+)
 
 # blueprints
 from .frontend import frontend
@@ -18,24 +28,20 @@ from social.apps.flask_app.routes import social_auth
 from social.apps.flask_app.default.models import init_social
 from social.apps.flask_app.template_filters import backends
 
-__all__ = ('create_app', 'create_celery', )
+__all__ = ("create_app", "create_celery")
 
-BLUEPRINTS = (
-    frontend,
-    social_auth,
-    auth,
-    api
-)
+BLUEPRINTS = (frontend, social_auth, auth, api)
 
 
-def create_app(config=None, app_name='project', blueprints=None):
-    app = Flask(app_name,
-        static_folder=os.path.join(os.path.dirname(__file__), '..', 'static'),
-        template_folder="templates"
+def create_app(config=None, app_name="project", blueprints=None):
+    app = Flask(
+        app_name,
+        static_folder=os.path.join(os.path.dirname(__file__), "..", "static"),
+        template_folder="templates",
     )
 
-    app.config.from_object('project.config')
-    app.config.from_pyfile('../local.cfg', silent=True)
+    app.config.from_object("project.config")
+    app.config.from_pyfile("../local.cfg", silent=True)
     if config:
         app.config.from_pyfile(config)
 
@@ -54,16 +60,20 @@ def create_app(config=None, app_name='project', blueprints=None):
 
 
 def create_celery(app):
-    celery = Celery(app.import_name, broker=app.config['CELERY_BROKER_URL'])
+    celery = Celery(app.import_name, broker=app.config["CELERY_BROKER_URL"])
     celery.conf.update(app.config)
     TaskBase = celery.Task
+
     class ContextTask(TaskBase):
         abstract = True
+
         def __call__(self, *args, **kwargs):
             with app.app_context():
                 return TaskBase.__call__(self, *args, **kwargs)
+
     celery.Task = ContextTask
     return celery
+
 
 def blueprints_fabrics(app, blueprints):
     """Configure blueprints in views."""
@@ -137,17 +147,17 @@ def gvars(app):
     @app.context_processor
     def inject_user():
         try:
-            return {'user': g.user}
+            return {"user": g.user}
         except AttributeError:
-            return {'user': None}
+            return {"user": None}
 
     @babel.localeselector
     def get_locale():
         if g.user:
-            if hasattr(g.user, 'ui_lang'):
+            if hasattr(g.user, "ui_lang"):
                 return g.user.ui_lang
 
-        accept_languages = app.config.get('ACCEPT_LANGUAGES')
+        accept_languages = app.config.get("ACCEPT_LANGUAGES")
         return request.accept_languages.best_match(accept_languages)
 
 
@@ -159,35 +169,39 @@ def configure_logging(app):
         return
 
     import logging
-    from logging.handlers import SMTPHandler
 
     # Set info level on logger, which might be overwritten by handers.
     # Suppress DEBUG messages.
     app.logger.setLevel(logging.INFO)
 
-    info_log = os.path.join(app.config['LOG_FOLDER'], 'info.log')
-    info_file_handler = logging.handlers.RotatingFileHandler(info_log, maxBytes=100000, backupCount=10)
+    info_log = os.path.join(app.config["LOG_FOLDER"], "info.log")
+    info_file_handler = logging.handlers.RotatingFileHandler(
+        info_log, maxBytes=100000, backupCount=10
+    )
     info_file_handler.setLevel(logging.INFO)
-    info_file_handler.setFormatter(logging.Formatter(
-        '%(asctime)s %(levelname)s: %(message)s '
-        '[in %(pathname)s:%(lineno)d]')
+    info_file_handler.setFormatter(
+        logging.Formatter(
+            "%(asctime)s %(levelname)s: %(message)s " "[in %(pathname)s:%(lineno)d]"
+        )
     )
     app.logger.addHandler(info_file_handler)
 
     # Testing
-    #app.logger.info("testing info.")
-    #app.logger.warn("testing warn.")
-    #app.logger.error("testing error.")
+    # app.logger.info("testing info.")
+    # app.logger.warn("testing warn.")
+    # app.logger.error("testing error.")
 
-    mail_handler = SMTPHandler(app.config['MAIL_SERVER'],
-                               app.config['MAIL_USERNAME'],
-                               app.config['ADMINS'],
-                               'O_ops... %s failed!' % app.config['PROJECT'],
-                               (app.config['MAIL_USERNAME'],
-                                app.config['MAIL_PASSWORD']))
+    mail_handler = logging.handlers.SMTPHandler(
+        app.config["MAIL_SERVER"],
+        app.config["MAIL_USERNAME"],
+        app.config["ADMINS"],
+        "O_ops... %s failed!" % app.config["PROJECT"],
+        (app.config["MAIL_USERNAME"], app.config["MAIL_PASSWORD"]),
+    )
     mail_handler.setLevel(logging.ERROR)
-    mail_handler.setFormatter(logging.Formatter(
-        '%(asctime)s %(levelname)s: %(message)s '
-        '[in %(pathname)s:%(lineno)d]')
+    mail_handler.setFormatter(
+        logging.Formatter(
+            "%(asctime)s %(levelname)s: %(message)s " "[in %(pathname)s:%(lineno)d]"
+        )
     )
     app.logger.addHandler(mail_handler)
